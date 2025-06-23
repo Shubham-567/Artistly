@@ -1,7 +1,9 @@
+const { default: Hero } = require("@/sections/Hero");
+
 function Home() {
   return (
     <>
-      <div>Home</div>
+      <Hero />
     </>
   );
 }

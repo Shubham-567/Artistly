@@ -76,11 +76,6 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
-body {
-  background: var(--background-light);
-  color: var(--text-dark);
-}
-
 .dark {
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
@@ -120,11 +115,15 @@ body {
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground selection:text-primary-foreground selection:bg-primary;
+  }
+
+  Button {
+    cursor: pointer;
   }
 }
 
-
+/* Custom Components */
 @layer components {
   /* Navbar */
   .navbar-container {
@@ -157,6 +156,39 @@ body {
 
   .navbar-mobile-link {
     @apply block px-6 py-4 text-base font-medium text-muted-foreground hover:bg-muted hover:text-foreground transition-colors duration-200;
+  }
+
+  /* Hero Section */
+  .hero-section {
+    @apply w-full bg-background pt-24 md:pt-32 lg:pt-12 pb-16 md:pb-32 lg:pb-12;
+  }
+
+  .hero-container {
+    @apply container mx-auto px-6 md:px-10 grid grid-cols-1 md:grid-cols-2 items-center gap-12;
+  }
+
+  .hero-content {
+    @apply text-center md:text-left;
+  }
+
+  .hero-heading {
+    @apply text-4xl lg:text-5xl font-bold text-foreground mb-6 leading-tight;
+  }
+
+  .hero-subtext {
+    @apply text-muted-foreground text-lg md:text-xl mb-8 max-w-xl mx-auto md:mx-0;
+  }
+
+  .hero-buttons {
+    @apply flex flex-col sm:flex-row gap-4 justify-center md:justify-start;
+  }
+
+  .hero-image-wrapper {
+    @apply flex justify-center md:justify-end;
+  }
+
+  .hero-image {
+    @apply w-full max-w-md md:max-w-full;
   }
 }
 
