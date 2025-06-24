@@ -5,12 +5,33 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Search, Sparkles, X } from "lucide-react";
 import { useState } from "react";
+import artists from "@/lib/data/artists.json";
 
-function ArtistHero() {
+function ArtistHero({ setFiltered }) {
   const [query, setQuery] = useState("");
 
   const handleSearch = () => {
-    console.log("Search query: ", query);
+    const lowerQuery = query.toLowerCase().trim();
+
+    const result = artists.filter((artist) => {
+      const name = artist.name?.toLowerCase() || "";
+      const category = artist.category?.toLowerCase() || "";
+      const location = artist.location?.toLowerCase() || "";
+
+      return (
+        name.includes(lowerQuery) ||
+        category.includes(lowerQuery) ||
+        location.includes(lowerQuery)
+      );
+    });
+
+    setFiltered(result);
+  };
+
+  const handleClear = () => {
+    setQuery("");
+
+    setFiltered(artists);
   };
 
   return (
@@ -18,8 +39,8 @@ function ArtistHero() {
       <div className='artist-hero-inner'>
         <Badge
           variant='secondary'
-          className='mb-4 py-2 px-3 inline-flex items-center gap-2 text-primary bg-primary/10'>
-          <Sparkles className='size-4' />
+          className='text-sm mb-4 py-2 px-3 inline-flex items-center gap-2 text-primary bg-primary/10'>
+          <Sparkles className='size-5' />
           Discover Talent
         </Badge>
 
@@ -38,6 +59,7 @@ function ArtistHero() {
             placeholder='Search artists, category or location...'
             value={query}
             onChange={(e) => setQuery(e.target.value)}
+            onKeyDown={(e) => e.key === "Enter" && handleSearch()}
             className='artist-hero-search-input py-6'
           />
 
@@ -46,7 +68,7 @@ function ArtistHero() {
               <Button
                 size='icon'
                 variant='outline'
-                onClick={() => setQuery("")}
+                onClick={handleClear}
                 className='size-9'
                 aria-label='clear'>
                 <X className='size-4' />

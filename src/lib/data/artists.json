@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Arjun Mehta",
+    "category": "Singers",
+    "location": "Mumbai",
+    "priceRange": "₹15,000–₹30,000"
+  },
+  {
+    "name": "Riya Sharma",
+    "category": "Dancers",
+    "location": "Delhi",
+    "priceRange": "₹6,000–₹9,000"
+  },
+  {
+    "name": "DJ Rohan",
+    "category": "DJs",
+    "location": "Bangalore",
+    "priceRange": "₹50,000–₹75,000"
+  },
+  {
+    "name": "Sneha Kapoor",
+    "category": "Speakers",
+    "location": "Chennai",
+    "priceRange": "₹20,000–₹35,000"
+  },
+  {
+    "name": "Aditya Verma",
+    "category": "Singers",
+    "location": "Mumbai",
+    "priceRange": "₹60,000–₹80,000"
+  },
+  {
+    "name": "Priya Nair",
+    "category": "Dancers",
+    "location": "Bangalore",
+    "priceRange": "₹10,000–₹20,000"
+  },
+  {
+    "name": "DJ Maya",
+    "category": "DJs",
+    "location": "Delhi",
+    "priceRange": "₹30,000–₹50,000"
+  },
+  {
+    "name": "Vikram Patel",
+    "category": "Speakers",
+    "location": "Mumbai",
+    "priceRange": "₹5,000–₹10,000"
+  },
+  {
+    "name": "Nisha Roy",
+    "category": "Singers",
+    "location": "Chennai",
+    "priceRange": "₹12,000–₹18,000"
+  },
+  {
+    "name": "Rahul Iyer",
+    "category": "Dancers",
+    "location": "Delhi",
+    "priceRange": "₹25,000–₹40,000"
+  }
+]
