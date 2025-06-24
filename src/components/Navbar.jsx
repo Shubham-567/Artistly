@@ -47,7 +47,8 @@ function Navbar() {
           <Button
             variant='ghost'
             size='icon'
-            onClick={() => setIsOpen(!isOpen)}>
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label='menu'>
             {isOpen ? <X className='size-6' /> : <Menu className='size-6' />}
           </Button>
         </div>

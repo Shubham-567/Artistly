@@ -227,4 +227,22 @@
   .category-description {
     @apply text-sm text-muted-foreground leading-relaxed;
   }
+
+  /* Footer */
+
+  .footer {
+    @apply w-full border-t bg-background text-muted-foreground py-4;
+  }
+
+  .footer-inner {
+    @apply container mx-auto px-6 md:px-10 flex items-center justify-between gap-4 text-sm text-center md:text-left;
+  }
+
+  .footer-social-group {
+    @apply flex items-center gap-4;
+  }
+
+  .footer-social-link {
+    @apply hover:text-foreground transition-colors;
+  }
 }
