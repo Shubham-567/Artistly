@@ -53,7 +53,9 @@ function page() {
         <FilterBlock onFilterChange={handleFilterChange} />
 
         {/* Artist Cards */}
-        <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-8'>
+        <div
+          id='artist-grid'
+          className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-8'>
           {filtered.length > 0 ? (
             filtered.map((artist, index) => (
               <ArtistCard key={index} artist={artist} />

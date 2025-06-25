@@ -9,11 +9,11 @@ function Hero() {
         {/* Text Content */}
 
         <div className='hero-content'>
-          <h1 className='hero-heading'>
+          <h1 className='heading-xl mb-6'>
             Book Verified Artists for Your Next Big Event
           </h1>
 
-          <p className='hero-subtext'>
+          <p className='subtext-base mb-8 max-w-xl mx-auto md:mx-0'>
             Artistly helps you discover, connect, and book talented performers
             across categories like singers, dancers, DJs, and more — all in one
             place.

@@ -26,6 +26,12 @@ function ArtistHero({ setFiltered }) {
     });
 
     setFiltered(result);
+
+    const cardGrid = document.getElementById("artist-grid");
+
+    if (cardGrid && query) {
+      cardGrid.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   const handleClear = () => {
@@ -44,16 +50,16 @@ function ArtistHero({ setFiltered }) {
           Discover Talent
         </Badge>
 
-        <h1 className='artist-hero-title'>
+        <h1 className='heading-xl mb-4'>
           Find the Perfect Artist for Your Next Event
         </h1>
 
-        <p className='artist-hero-subtext'>
+        <p className='subtext-base mb-8'>
           Browse our verified talent pool of singers, DJs, dancers, speakers and
           more. Filter by category, budget, or location to find your match.
         </p>
 
-        <div className='artist-hero-search-wrapper'>
+        <div className='artist-hero-search-wrapper shadow-lg'>
           <Input
             type='text'
             placeholder='Search artists, category or location...'
