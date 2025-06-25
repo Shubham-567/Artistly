@@ -65,9 +65,11 @@ function OnboardingForm() {
 
   return (
     <section className='form-section'>
-      <h1 className='heading-xl text-center mb-4'>Onboarding Form</h1>
+      <h1 className='heading-xl text-center mb-4'>
+        Get Discovered as an Artist
+      </h1>
 
-      <p className='subtext-base text-center max-w-lg mx-auto'>
+      <p className='subtext-base text-center max-w-lg mx-auto mb-6'>
         Filed out your artist profile so event organizers can discover and book
       </p>
 

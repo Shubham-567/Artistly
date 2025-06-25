@@ -325,15 +325,11 @@
 
   /* Onboarding Form */
   .form-section {
-    @apply w-full max-w-3xl mx-auto px-4 sm:px-6 py-20;
+    @apply w-full max-w-3xl mx-auto px-4 sm:px-12 py-6 mt-20 mb-6;
   }
 
-  .form-title {
-    @apply text-4xl font-bold text-center mb-4;
-  }
-
-  .form-subtext {
-    @apply text-center text-muted-foreground mb-10 max-w-md mx-auto;
+  .form-section > form {
+    @apply w-full max-w-2xl mx-auto px-4 sm:px-6 py-6 border-2 rounded-2xl shadow-lg;
   }
 
   .form-group {
@@ -353,7 +349,7 @@
   }
 
   .form-preview-img {
-    @apply w-32 h-32 mt-4 object-cover rounded-lg bg-primary/10 border shadow-sm;
+    @apply size-32 mt-4 object-cover rounded-lg bg-primary/10 border shadow-sm;
   }
 
   .form-submit-btn {
