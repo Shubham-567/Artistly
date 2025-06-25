@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Artistly
+
+Discover and book talented performers with ease. Artistly is a modern, responsive web platform for event organizers to browse, search, and filter a curated list of artists — from singers and DJs to dancers and speakers.
+
+🔗 **Live Site**: [https://artistly-site.vercel.app/](https://artistly-site.vercel.app/)
+
+---
+
+## Features
+
+- Artist onboarding form (bio, category, location, fee, image)
+- Real-time search by name, category, or location
+- Filter artists by category, location, and budget
+- Responsive card grid layout for artist profiles
+- Mobile-friendly UI using `shadcn/ui` + Tailwind CSS
+- Custom 404 Not Found page
+
+---
+
+## Tech Stack
+
+- **Next.js 14** (App Router, Server Components)
+- **Tailwind CSS** for styling
+- **shadcn/ui** components
+- **Lucide Icons**
+- **React Hook Form** + **Yup** validation
+
+---
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+git clone https://github.com/Shubham-567/Artistly.git
+cd artistly
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Visit `http://localhost:3000` to view the app locally.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## License
 
-## Learn More
+MIT License. Feel free to fork and use this project as needed.
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
