@@ -13,13 +13,12 @@ Discover and book talented performers with ease. Artistly is a modern, responsiv
 - Filter artists by category, location, and budget
 - Responsive card grid layout for artist profiles
 - Mobile-friendly UI using `shadcn/ui` + Tailwind CSS
-- Custom 404 Not Found page
 
 ---
 
 ## Tech Stack
 
-- **Next.js 14** (App Router, Server Components)
+- **Next.js 15** (App Router, Server Components)
 - **Tailwind CSS** for styling
 - **shadcn/ui** components
 - **Lucide Icons**
