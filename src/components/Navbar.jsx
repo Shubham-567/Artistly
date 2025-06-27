@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { Button } from "./ui/button";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { X, Menu } from "lucide-react";
 
 const navLinks = [
@@ -18,14 +18,27 @@ const navLinks = [
     label: "Onboard",
     href: "/onboard",
   },
-  {
-    label: "Dashboard",
-    href: "/dashboard",
-  },
 ];
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const menuRef = useRef(null);
+
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    }
+
+    if (isOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isOpen]);
 
   return (
     <nav className='navbar-container'>
@@ -42,8 +55,8 @@ function Navbar() {
           ))}
         </div>
 
-        {/* Mobile Menu Icon*/}
-        <div className='md:hidden'>
+        <div className='md:hidden' ref={menuRef}>
+          {/* Mobile Menu Icon*/}
           <Button
             variant='ghost'
             size='icon'
@@ -51,23 +64,23 @@ function Navbar() {
             aria-label='menu'>
             {isOpen ? <X className='size-6' /> : <Menu className='size-6' />}
           </Button>
+
+          {/* Mobile Menu Links */}
+          {isOpen && (
+            <div className='navbar-mobile-menu'>
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className='navbar-mobile-link'
+                  onClick={() => setIsOpen(false)}>
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+          )}
         </div>
       </div>
-
-      {/* Mobile Menu Links */}
-      {isOpen && (
-        <div className='navbar-mobile-menu'>
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className='navbar-mobile-link'
-              onClick={() => setIsOpen(false)}>
-              {link.label}
-            </Link>
-          ))}
-        </div>
-      )}
     </nav>
   );
 }

@@ -24,22 +24,22 @@ function FilterBlock({ onFilterChange }) {
   });
 
   const handleChange = (filed, value) => {
-    const updated = { ...filters, [filed]: value };
+    const updatedFilters = { ...filters, [filed]: value };
 
-    setFilters(updated);
+    setFilters(updatedFilters);
 
     if (onFilterChange) {
-      onFilterChange(updated);
+      onFilterChange(updatedFilters);
     }
   };
 
-  const clearFilters = () => {
-    const cleared = { category: "All", location: "All", budget: "All" };
+  const resetFilters = () => {
+    const resetFilters = { category: "All", location: "All", budget: "All" };
 
-    setFilters(cleared);
+    setFilters(resetFilters);
 
     if (onFilterChange) {
-      onFilterChange(cleared);
+      onFilterChange(resetFilters);
     }
   };
 
@@ -48,8 +48,8 @@ function FilterBlock({ onFilterChange }) {
       <div className='filter-block-header'>
         <h2 className='filter-block-title'>Filter Artists</h2>
 
-        <Button onClick={clearFilters} className='text-sm'>
-          Clear Filters
+        <Button onClick={resetFilters} className='text-sm'>
+          Reset Filters
         </Button>
       </div>
 

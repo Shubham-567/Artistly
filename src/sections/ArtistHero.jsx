@@ -7,11 +7,11 @@ import { Search, Sparkles, X } from "lucide-react";
 import { useState } from "react";
 import artists from "@/lib/data/artists.json";
 
-function ArtistHero({ setFiltered }) {
-  const [query, setQuery] = useState("");
+function ArtistHero({ setFilteredArtists }) {
+  const [searchQuery, setSearchQuery] = useState("");
 
   const handleSearch = () => {
-    const lowerQuery = query.toLowerCase().trim();
+    const lowerSearchQuery = searchQuery.toLowerCase().trim();
 
     const result = artists.filter((artist) => {
       const name = artist.name?.toLowerCase() || "";
@@ -19,25 +19,25 @@ function ArtistHero({ setFiltered }) {
       const location = artist.location?.toLowerCase() || "";
 
       return (
-        name.includes(lowerQuery) ||
-        category.includes(lowerQuery) ||
-        location.includes(lowerQuery)
+        name.includes(lowerSearchQuery) ||
+        category.includes(lowerSearchQuery) ||
+        location.includes(lowerSearchQuery)
       );
     });
 
-    setFiltered(result);
+    setFilteredArtists(result);
 
     const cardGrid = document.getElementById("artist-grid");
 
-    if (cardGrid && query) {
+    if (cardGrid && searchQuery) {
       cardGrid.scrollIntoView({ behavior: "smooth" });
     }
   };
 
   const handleClear = () => {
-    setQuery("");
+    setSearchQuery("");
 
-    setFiltered(artists);
+    setFilteredArtists(artists);
   };
 
   return (
@@ -63,14 +63,14 @@ function ArtistHero({ setFiltered }) {
           <Input
             type='text'
             placeholder='Search artists, category or location...'
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
             onKeyDown={(e) => e.key === "Enter" && handleSearch()}
             className='artist-hero-search-input py-6'
           />
 
           <div className='artist-hero-button-group'>
-            {query && (
+            {searchQuery && (
               <Button
                 size='icon'
                 variant='outline'

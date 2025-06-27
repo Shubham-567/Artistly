@@ -109,6 +109,7 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
 }
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -154,16 +155,12 @@
     @apply text-lg font-medium text-muted-foreground hover:text-primary transition-colors duration-200;
   }
 
-  .navbar-mobile-toggle {
-    @apply md:hidden;
-  }
-
   .navbar-mobile-menu {
-    @apply md:hidden bg-background border-t border-border shadow-lg rounded-b-lg;
+    @apply absolute right-6 mt-3 w-56 rounded-xl border bg-card shadow-lg p-2 flex flex-col z-50 md:hidden;
   }
 
   .navbar-mobile-link {
-    @apply block px-6 py-4 text-base;
+    @apply block px-6 py-2 text-base;
   }
 
   /* Hero Section */
