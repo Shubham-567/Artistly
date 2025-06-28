@@ -4,7 +4,7 @@ import ArtistHero from "@/sections/ArtistHero";
 import artists from "@/lib/data/artists.json";
 import ArtistCard from "@/components/ArtistCard";
 import { useState } from "react";
-import FilterBlock from "@/components/FilterBlock ";
+import FilterBlock from "@/components/FilterBlock";
 
 function page() {
   const [filteredArtists, setFilteredArtists] = useState(artists);

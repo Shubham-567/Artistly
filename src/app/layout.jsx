@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Artistly — Discover & Book Talent",
+  title: "Artistly",
   description:
     "Find and book singers, DJs, dancers, and more for your events with Artistly.",
 };
